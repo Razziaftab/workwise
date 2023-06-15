@@ -1,0 +1,4 @@
+-> Exception handling (app\Exceptions\Handler.php)
+-> Use the third party api for estimated age
+-> Use proper resource api to hide attribute
+-> Use repository pattern

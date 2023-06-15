@@ -1,0 +1,67 @@
+Task1 Rough Description:
+
+-> Company should login via url like (http://127.0.0.1:8000/api/v1/login)
+-> Click on "candidate search" link (http://127.0.0.1:8000/api/v1/candidate-search)
+-> Show the candidate with filters (http://127.0.0.1:8000/api/v1/candidate-search)
+-> We can add the pagination as well
+
+The JSON look like this:
+{
+    filters[{
+        "type_of_employment": "permanent employment",
+        "location": {
+            0: "karlsruhe",
+            1: "0km",
+            2: 22.1234567,
+            3: 55.1234567
+        },
+        "skills": [{
+            0: {
+                "title": "PHP",
+                "knowledge": "Expert"
+            },
+            1: {
+                "title": "NodeJs",
+                "knowledge": "Expert"
+            },
+            2: {
+                "title": "Python",
+                "knowledge": "Intermediate"
+            },
+            3: {
+                "title": "Docker",
+                "Knowledge": "Beginner"
+            }
+        }]
+    }]
+}
+
+Then the result show like this:
+{
+    "status": 200,
+    "data": [{
+        0: {
+            "id": 1234567,
+            "name": "Razzi Aftab",
+            "lastLogin": "Last active on 22.02",
+            "lastEmployer": "Educator until April 2020",
+            "link": "http://127.0.0.1:8000/api/v1/candidate/1234567"
+            "image": "https://s3.aws.com/candidate/photo/212232-3442343423.jpg"
+        },
+        0: {
+            "id": 9876543,
+            "name": "Stephen Henry",
+            "lastLogin": "Last active 8 days ago",
+            "lastEmployer": "Currently program Manager at WorkWise",
+            "link": "http://127.0.0.1:8000/api/v1/candidate/9876543"
+            "image": "https://s3.aws.com/candidate/photo/534524-344234364.jpg"
+        }
+    }]
+}
+
+-> Employer can click on candidate view link (http://127.0.0.1:8000/api/v1/candidate/9876543)
+-> Then Employer can send the request to candidate to invite for the job (http://127.0.0.1:8000/api/v1/invitation-job/123456?CandidateId=9876543&UserId=1234567)
+-> If Employer see the candidate is not fit for the job then click on "Not Fit" button (http://127.0.0.1:8000/api/v1/not-fit-for-job/123456?CandidateId=9876543&UserId=1234567)
+-> If Employer want to save the candidate for the other job or other purpose then click on "Save" button (http://127.0.0.1:8000/api/v1/save-candidate?CandidateId=9876543&UserId=1234567)
+
+

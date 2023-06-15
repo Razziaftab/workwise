@@ -1,0 +1,7 @@
+Task3 Rough Description:
+
+
+-> Create Tags table and its attributes are ('id', 'name', timestamps())
+-> Same Crud like articles for the tags
+-> Tags and articles having many-to-many relationship that's why create the pivot table
+-> Query to fetch all the articles filter by tags and author name
